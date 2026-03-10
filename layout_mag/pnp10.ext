@@ -1,0 +1,178 @@
+timestamp 1634562067
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use pnpt1 pnpt1_5 1 0 -10 0 1 -1290
+use pnpt1 pnpt1_25 1 0 -1298 0 1 -1290
+use pnpt1 pnpt1_10 1 0 -10 0 1 -2578
+use pnpt1 pnpt1_24 1 0 -1298 0 1 -2578
+use pnpt1 pnpt1_6 1 0 1278 0 1 -1290
+use pnpt1 pnpt1_11 1 0 1278 0 1 -2578
+use pnpt1 pnpt1_7 1 0 2566 0 1 -1290
+use pnpt1 pnpt1_12 1 0 2566 0 1 -2578
+use pnpt1 pnpt1_8 1 0 3854 0 1 -1290
+use pnpt1 pnpt1_13 1 0 3854 0 1 -2578
+use pnpt1 pnpt1_9 1 0 5142 0 1 -1290
+use pnpt1 pnpt1_14 1 0 5142 0 1 -2578
+use pnpt1 pnpt1_22 1 0 6430 0 1 -1290
+use pnpt1 pnpt1_23 1 0 6430 0 1 -2578
+use pnpt1 pnpt1_0 1 0 -10 0 1 -2
+use pnpt1 pnpt1_26 1 0 -1298 0 1 -2
+use pnpt1 pnpt1_1 1 0 1278 0 1 -2
+use pnpt1 pnpt1_2 1 0 2566 0 1 -2
+use pnpt1 pnpt1_3 1 0 3854 0 1 -2
+use pnpt1 pnpt1_4 1 0 5142 0 1 -2
+use pnpt1 pnpt1_21 1 0 6430 0 1 -2
+use pnpt1 pnpt1_15 1 0 -10 0 1 1286
+use pnpt1 pnpt1_27 1 0 -1298 0 1 1286
+use pnpt1 pnpt1_16 1 0 1278 0 1 1286
+use pnpt1 pnpt1_17 1 0 2566 0 1 1286
+use pnpt1 pnpt1_18 1 0 3854 0 1 1286
+use pnpt1 pnpt1_19 1 0 5142 0 1 1286
+use pnpt1 pnpt1_20 1 0 6430 0 1 1286
+port "vq3" 3 3134 -924 3134 -924 m2
+port "vq1" 1 3268 972 3268 972 m2
+port "vq2" 2 3458 1420 3458 1420 m1
+port "gnd" 4 16 36 16 36 li
+node "vq3" 0 622.734 3134 -924 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 329476 2296 369664 2432 0 0 0 0 0 0 0 0
+node "vq1" 0 622.808 3268 972 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 329476 2296 369664 2432 0 0 0 0 0 0 0 0
+node "vq2" 3 4849.19 3458 1420 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8661120 30960 0 0 0 0 0 0 0 0 0 0
+node "gnd" 804 15167.7 16 36 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9916184 50708 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_n1174_n2454#" 240 30873.4 -1174 -2454 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 26304544 46764 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "a_6430_98#" 0 0 6430 98 ppd 0 0 0 0 0 0 0 0 0 0 26136 2420 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "vq3" "li_n1174_n2454#" 32.5941
+cap "vq1" "li_n1174_n2454#" 32.5941
+cap "vq1" "vq3" 74.1387
+cap "vq2" "li_n1174_n2454#" 2949.79
+cap "vq2" "vq3" 161.083
+cap "vq2" "vq1" 161.29
+cap "gnd" "li_n1174_n2454#" 5180.75
+cap "vq3" "gnd" 398.369
+cap "vq1" "gnd" 397.286
+cap "vq2" "gnd" 18111.2
+cap "pnpt1_5/Collector" "pnpt1_5/Emitter" 19.5587
+cap "pnpt1_2/Emitter" "pnpt1_5/Emitter" 0.00127134
+cap "pnpt1_7/Emitter" "pnpt1_5/Emitter" 0.48891
+cap "pnpt1_5/Collector" "pnpt1_5/Emitter" 214.059
+cap "pnpt1_5/Collector" "pnpt1_6/Emitter" 203.718
+cap "pnpt1_6/Emitter" "pnpt1_7/Emitter" 8.48994
+cap "pnpt1_2/Emitter" "pnpt1_6/Emitter" 0.00694347
+cap "pnpt1_7/Collector" "pnpt1_8/Emitter" 142.183
+cap "pnpt1_8/Collector" "pnpt1_8/Emitter" 13.3026
+cap "pnpt1_5/Emitter" "pnpt1_5/Collector" 19.5587
+cap "pnpt1_5/Collector" "pnpt1_5/Emitter" -354.161
+cap "pnpt1_5/Emitter" "pnpt1_7/Emitter" 3.41704
+cap "pnpt1_5/Emitter" "pnpt1_5/Collector" -406.844
+cap "pnpt1_5/Collector" "pnpt1_7/Emitter" -33.7928
+cap "pnpt1_5/Collector" "pnpt1_7/Emitter" -22.2414
+cap "pnpt1_7/Emitter" "pnpt1_2/Emitter" 4.88325
+cap "pnpt1_6/Emitter" "pnpt1_7/Emitter" 10.3374
+cap "pnpt1_5/Collector" "pnpt1_6/Emitter" -135.162
+cap "pnpt1_7/Collector" "pnpt1_8/Emitter" -427.31
+cap "pnpt1_8/Emitter" "pnpt1_8/Collector" -193.64
+cap "pnpt1_5/Collector" "pnpt1_5/Emitter" 19.5587
+cap "pnpt1_5/Collector" "pnpt1_5/Emitter" -359.505
+cap "pnpt1_5/Emitter" "pnpt1_7/Emitter" 0.00127134
+cap "pnpt1_2/Emitter" "pnpt1_5/Collector" -33.8342
+cap "pnpt1_5/Emitter" "pnpt1_2/Emitter" 3.90595
+cap "pnpt1_5/Emitter" "pnpt1_5/Collector" -239.972
+cap "pnpt1_2/Emitter" "pnpt1_7/Emitter" 4.88325
+cap "pnpt1_2/Emitter" "pnpt1_6/Emitter" 18.6213
+cap "pnpt1_5/Collector" "pnpt1_6/Emitter" 14.6089
+cap "pnpt1_2/Emitter" "pnpt1_5/Collector" -24.1682
+cap "pnpt1_6/Emitter" "pnpt1_7/Emitter" 0.00694347
+cap "pnpt1_7/Collector" "pnpt1_8/Emitter" -332.082
+cap "pnpt1_8/Emitter" "pnpt1_8/Collector" -193.981
+cap "pnpt1_0/Emitter" "pnpt1_5/Collector" 19.5587
+cap "pnpt1_5/Collector" "pnpt1_0/Emitter" 47.758
+cap "pnpt1_1/Emitter" "pnpt1_5/Collector" 54.2562
+cap "pnpt1_3/Emitter" "pnpt1_7/Collector" 47.5122
+cap "pnpt1_8/Collector" "pnpt1_3/Emitter" 13.3063
+merge "pnpt1_4/Emitter" "pnpt1_9/Emitter" -8209.74 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2976800 -19520 0 0 0 0 0 0 0 0 0 0
+merge "pnpt1_9/Emitter" "pnpt1_3/Emitter"
+merge "pnpt1_3/Emitter" "pnpt1_8/Emitter"
+merge "pnpt1_8/Emitter" "pnpt1_1/Emitter"
+merge "pnpt1_1/Emitter" "pnpt1_0/Emitter"
+merge "pnpt1_0/Emitter" "pnpt1_6/Emitter"
+merge "pnpt1_6/Emitter" "pnpt1_5/Emitter"
+merge "pnpt1_5/Emitter" "vq2"
+merge "pnpt1_20/Emitter" "pnpt1_20/Base" -87048.3 0 0 0 0 0 0 0 0 0 0 -26136 -118340 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -25466242 -552142 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pnpt1_20/Base" "pnpt1_20/Collector"
+merge "pnpt1_20/Collector" "pnpt1_19/Emitter"
+merge "pnpt1_19/Emitter" "pnpt1_19/Base"
+merge "pnpt1_19/Base" "pnpt1_19/Collector"
+merge "pnpt1_19/Collector" "pnpt1_18/Emitter"
+merge "pnpt1_18/Emitter" "pnpt1_18/Base"
+merge "pnpt1_18/Base" "pnpt1_18/Collector"
+merge "pnpt1_18/Collector" "pnpt1_17/Emitter"
+merge "pnpt1_17/Emitter" "pnpt1_17/Base"
+merge "pnpt1_17/Base" "pnpt1_17/Collector"
+merge "pnpt1_17/Collector" "pnpt1_16/Emitter"
+merge "pnpt1_16/Emitter" "pnpt1_16/Base"
+merge "pnpt1_16/Base" "pnpt1_16/Collector"
+merge "pnpt1_16/Collector" "pnpt1_27/Collector"
+merge "pnpt1_27/Collector" "pnpt1_27/Emitter"
+merge "pnpt1_27/Emitter" "pnpt1_27/Base"
+merge "pnpt1_27/Base" "pnpt1_15/Emitter"
+merge "pnpt1_15/Emitter" "pnpt1_15/Base"
+merge "pnpt1_15/Base" "pnpt1_15/Collector"
+merge "pnpt1_15/Collector" "pnpt1_21/Emitter"
+merge "pnpt1_21/Emitter" "pnpt1_21/Base"
+merge "pnpt1_21/Base" "pnpt1_21/Collector"
+merge "pnpt1_21/Collector" "pnpt1_23/Emitter"
+merge "pnpt1_23/Emitter" "pnpt1_23/Base"
+merge "pnpt1_23/Base" "pnpt1_23/Collector"
+merge "pnpt1_23/Collector" "pnpt1_22/Emitter"
+merge "pnpt1_22/Emitter" "pnpt1_22/Base"
+merge "pnpt1_22/Base" "pnpt1_22/Collector"
+merge "pnpt1_22/Collector" "pnpt1_4/Base"
+merge "pnpt1_4/Base" "pnpt1_4/Collector"
+merge "pnpt1_4/Collector" "pnpt1_14/Emitter"
+merge "pnpt1_14/Emitter" "pnpt1_14/Base"
+merge "pnpt1_14/Base" "pnpt1_14/Collector"
+merge "pnpt1_14/Collector" "pnpt1_9/Base"
+merge "pnpt1_9/Base" "pnpt1_9/Collector"
+merge "pnpt1_9/Collector" "pnpt1_3/Base"
+merge "pnpt1_3/Base" "pnpt1_3/Collector"
+merge "pnpt1_3/Collector" "pnpt1_13/Emitter"
+merge "pnpt1_13/Emitter" "pnpt1_13/Base"
+merge "pnpt1_13/Base" "pnpt1_13/Collector"
+merge "pnpt1_13/Collector" "pnpt1_8/Base"
+merge "pnpt1_8/Base" "pnpt1_8/Collector"
+merge "pnpt1_8/Collector" "pnpt1_2/Base"
+merge "pnpt1_2/Base" "pnpt1_2/Collector"
+merge "pnpt1_2/Collector" "pnpt1_12/Emitter"
+merge "pnpt1_12/Emitter" "pnpt1_12/Base"
+merge "pnpt1_12/Base" "pnpt1_12/Collector"
+merge "pnpt1_12/Collector" "pnpt1_7/Base"
+merge "pnpt1_7/Base" "pnpt1_7/Collector"
+merge "pnpt1_7/Collector" "pnpt1_1/Base"
+merge "pnpt1_1/Base" "pnpt1_1/Collector"
+merge "pnpt1_1/Collector" "pnpt1_26/Collector"
+merge "pnpt1_26/Collector" "pnpt1_26/Emitter"
+merge "pnpt1_26/Emitter" "pnpt1_26/Base"
+merge "pnpt1_26/Base" "pnpt1_0/Base"
+merge "pnpt1_0/Base" "pnpt1_0/Collector"
+merge "pnpt1_0/Collector" "pnpt1_11/Emitter"
+merge "pnpt1_11/Emitter" "pnpt1_11/Base"
+merge "pnpt1_11/Base" "pnpt1_11/Collector"
+merge "pnpt1_11/Collector" "pnpt1_6/Base"
+merge "pnpt1_6/Base" "pnpt1_6/Collector"
+merge "pnpt1_6/Collector" "pnpt1_24/Emitter"
+merge "pnpt1_24/Emitter" "pnpt1_24/Base"
+merge "pnpt1_24/Base" "pnpt1_24/Collector"
+merge "pnpt1_24/Collector" "pnpt1_10/Emitter"
+merge "pnpt1_10/Emitter" "pnpt1_10/Base"
+merge "pnpt1_10/Base" "pnpt1_10/Collector"
+merge "pnpt1_10/Collector" "pnpt1_25/Emitter"
+merge "pnpt1_25/Emitter" "pnpt1_25/Base"
+merge "pnpt1_25/Base" "pnpt1_25/Collector"
+merge "pnpt1_25/Collector" "li_n1174_n2454#"
+merge "li_n1174_n2454#" "pnpt1_5/Base"
+merge "pnpt1_5/Base" "a_6430_98#"
+merge "a_6430_98#" "pnpt1_5/Collector"
+merge "pnpt1_5/Collector" "gnd"
+merge "pnpt1_2/Emitter" "vq1" -984.957 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -329476 -2296 0 0 0 0 0 0 0 0 0 0
+merge "pnpt1_7/Emitter" "vq3" -985.512 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -329476 -2296 0 0 0 0 0 0 0 0 0 0

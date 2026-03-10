@@ -1,0 +1,613 @@
+| units: 500000 tech: sky130A format: MIT
+x net2 net6 pfets_0/pfet_1/a_n60_0# vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=164 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 pfets_0/pfet_1/a_n60_0# vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=624 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vdd vref vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=1084 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vdd net1 vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=2004 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vref vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=1544 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 net1 vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=2464 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vdd net2 vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=2924 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vdd net1 vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=4764 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 net2 vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=3384 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 net1 vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=5224 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vdd net2 vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=3844 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vdd vref vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=5684 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 net2 vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=4304 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net2 vref vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=6144 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x vdd vdd net1 vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=6604 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net6 net1 vdd vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=7064 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x net6 vdd net1 vdd s=60000,2120 d=60000,2120 l=400 w=1000 x=7524 y=17432 sky130_fd_pr__pfet_01v8_lvt
+x starternfet_0/a_88_252# gnd starternfet_0/a_88_252# gnd s=12000,520 d=12000,520 l=1400 w=200 x=5122 y=12738 sky130_fd_pr__nfet_01v8_lvt
+x net6 starternfet_0/a_88_252# net6 gnd s=12000,520 d=12000,520 l=1400 w=200 x=6582 y=12738 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=418 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd qp1 gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=2758 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=158 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3278 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3018 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1458 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd rp1 gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1198 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3538 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1718 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd qp1 gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3798 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1978 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=4058 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=2238 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd rp1 gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3798 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=2498 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd rp1 gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=2758 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=4058 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3018 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=418 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3278 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=158 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=3538 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=678 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x gnd qp1 gnd gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1198 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=938 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1458 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1718 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=1978 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=2238 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=2498 y=14786 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=678 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=60000,2120 d=60000,2120 l=200 w=1000 x=938 y=13206 sky130_fd_pr__nfet_01v8_lvt
+x resbank_0/res1p41_2/a_0_0# resbank_0/li_1084_1992# resbank_0/li_546_0# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=2282 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_3/a_0_0# resbank_0/li_1084_1992# resbank_0/a_1628_20# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=2820 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_4/a_0_0# resbank_0/a_4312_1992# rp1 gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=3358 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_5/a_0_0# resbank_0/a_1628_20# resbank_0/li_2698_0# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=3896 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_6/a_0_0# resbank_0/li_3236_1992# resbank_0/li_2698_0# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=4434 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_8/a_0_0# resbank_0/a_4312_1992# li_1206_8736# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=5510 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_7/a_0_0# resbank_0/li_3236_1992# resbank_0/li_2696_n234# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=4972 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_9/a_0_0# resbank_0/li_4850_1992# resbank_0/li_2696_n234# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=6048 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_20/a_0_0# resbank_0/li_3236_n1168# resbank_0/li_1084_n3394# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=4972 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_11/a_0_0# resbank_0/li_5104_2458# resbank_0/li_5388_0# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=7124 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_10/a_0_0# resbank_0/li_4850_1992# resbank_0/li_5388_0# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=6586 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_21/a_0_0# li_1206_8736# qp2 gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=5510 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_22/a_0_0# resbank_0/li_4850_n1168# resbank_0/li_1084_n3394# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=6048 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_12/a_0_0# gnd gnd gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=7662 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_23/a_0_0# resbank_0/li_4850_n1168# resbank_0/li_5670_n3160# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=6586 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_24/a_0_0# resbank_0/li_5104_2458# resbank_0/li_5670_n3160# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=7124 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_13/a_0_0# gnd gnd gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=1206 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_25/a_0_0# gnd gnd gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=7662 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_14/a_0_0# resbank_0/li_546_n1168# qp3 gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=1744 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_15/a_0_0# resbank_0/li_546_n1168# qp3 gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=2282 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_16/a_0_0# resbank_0/li_8_n702# qp3 gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=2820 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_17/a_0_0# li_1206_8736# qp2 gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=3358 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_18/a_0_0# resbank_0/li_8_n702# resbank_0/li_2698_n3160# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=3896 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_19/a_0_0# resbank_0/li_3236_n1168# resbank_0/li_2698_n3160# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=4434 y=6476 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_0/a_0_0# gnd gnd gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=1206 y=9636 sky130_fd_pr__res_high_po_1p41
+x resbank_0/res1p41_1/a_0_0# vref resbank_0/li_546_0# gnd s=121824,1428 d=121824,1428 l=1560 w=0 x=1744 y=9636 sky130_fd_pr__res_high_po_1p41
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=3991 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=5279 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=6567 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=2703 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=1415 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp1 gnd s=462400,2720 l=0 w=0 x=3991 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=5279 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=6567 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=1415 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=2703 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp3 gnd s=462400,2720 l=0 w=0 x=3991 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=5279 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd qp2 gnd s=462400,2720 l=0 w=0 x=6567 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=7855 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=7855 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=1415 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=7855 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=2703 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=7855 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=3991 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=5279 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=127 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=1415 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=127 y=2715 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=6567 y=139 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=127 y=1427 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=2703 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+x gnd gnd gnd s=462400,2720 l=0 w=0 x=127 y=4003 sky130_fd_pr__pnp_05v5_W3p40L3p40
+C qp3 qp1 6.9
+C rp1 li_1206_8736# 2.0
+C qp2 rp1 4.4
+C resbank_0/li_8_n702# li_1206_8736# 3.0
+C resbank_0/li_1084_n3394# qp2 3.4
+C qp1 vdd 8.1
+C net1 net2 2.8
+C net1 vdd 10.7
+C qp1 vref 2.7
+C qp2 qp1 5.2
+C net1 vref 6.5
+C net6 net2 8.0
+C net6 vdd 9.0
+C net2 vdd 11.6
+C net1 rp1 2.6
+C qp3 qp2 5.7
+C net2 vref 2.1
+C vref vdd 4.3
+C resbank_0/li_2696_n234# li_1206_8736# 2.3
+C rp1 net2 7.6
+C net1 qp1 7.4
+C m1_9082_n14# qp2 3.2
+C m1_9082_n14#0 2.9
+C qp20 42.6
+R qp2 6859
+= qp2 resbank_0/qp2
+= qp2 resbank_0/res1p41_21/a_0_n432#
+= qp2 resbank_0/res1p41_17/a_0_n432#
+= qp2 pnp10_0/vq2
+= qp2 pnp10_0/pnpt1_4/Emitter
+= qp2 pnp10_0/pnpt1_9/Emitter
+= qp2 pnp10_0/pnpt1_3/Emitter
+= qp2 pnp10_0/pnpt1_8/Emitter
+= qp2 pnp10_0/pnpt1_1/Emitter
+= qp2 pnp10_0/pnpt1_0/Emitter
+= qp2 pnp10_0/pnpt1_6/Emitter
+= qp2 pnp10_0/pnpt1_5/Emitter
+R gnd 371218
+= gnd pfets_0/SUB
+= gnd pfets_0/pfet_16/SUB
+= gnd pfets_0/pfet_15/SUB
+= gnd pfets_0/pfet_14/SUB
+= gnd pfets_0/pfet_13/SUB
+= gnd pfets_0/pfet_12/SUB
+= gnd pfets_0/pfet_11/SUB
+= gnd pfets_0/pfet_10/SUB
+= gnd pfets_0/pfet_9/SUB
+= gnd pfets_0/pfet_8/SUB
+= gnd pfets_0/pfet_7/SUB
+= gnd pfets_0/pfet_6/SUB
+= gnd pfets_0/pfet_5/SUB
+= gnd pfets_0/pfet_4/SUB
+= gnd pfets_0/pfet_3/SUB
+= gnd pfets_0/pfet_2/SUB
+= gnd pfets_0/pfet_1/SUB
+= gnd pfets_0/pfet_0/SUB
+= gnd starternfet_0/gnd
+= gnd starternfet_0/nfet1_1/SUB
+= gnd starternfet_0/nfet1_0/SUB
+= gnd starternfet_0/nfet1_0/a_n60_0#
+= gnd li_4618_12880#
+= gnd nfets_0/gnd
+= gnd nfets_0/nfet_25/a_n60_0#
+= gnd nfets_0/nfet_24/a_200_0#
+= gnd nfets_0/nfet_16/a_200_0#
+= gnd nfets_0/nfet_17/a_n60_0#
+= gnd nfets_0/nfet_3/a_n60_0#
+= gnd nfets_0/nfet_2/a_200_0#
+= gnd nfets_0/nfet_28/a_n60_0#
+= gnd nfets_0/nfet_29/a_200_0#
+= gnd nfets_0/nfet_29/a_n60_0#
+= gnd nfets_0/nfet_25/a_200_0#
+= gnd nfets_0/nfet_27/a_200_0#
+= gnd nfets_0/nfet_25/SUB
+= gnd nfets_0/nfet_25/a_0_n26#
+= gnd nfets_0/nfet_24/SUB
+= gnd nfets_0/nfet_24/a_0_n26#
+= gnd nfets_0/nfet_19/SUB
+= gnd nfets_0/nfet_18/SUB
+= gnd nfets_0/nfet_17/SUB
+= gnd nfets_0/nfet_17/a_0_n26#
+= gnd nfets_0/nfet_27/SUB
+= gnd nfets_0/nfet_27/a_n60_0#
+= gnd nfets_0/nfet_27/a_0_n26#
+= gnd nfets_0/nfet_26/SUB
+= gnd nfets_0/nfet_26/a_200_0#
+= gnd nfets_0/nfet_26/a_0_n26#
+= gnd nfets_0/nfet_23/SUB
+= gnd nfets_0/nfet_22/SUB
+= gnd nfets_0/nfet_20/a_200_0#
+= gnd nfets_0/nfet_21/SUB
+= gnd nfets_0/nfet_21/a_n60_0#
+= gnd nfets_0/nfet_21/a_0_n26#
+= gnd nfets_0/nfet_16/SUB
+= gnd nfets_0/nfet_16/a_0_n26#
+= gnd nfets_0/nfet_7/SUB
+= gnd nfets_0/nfet_6/SUB
+= gnd nfets_0/nfet_5/SUB
+= gnd nfets_0/nfet_4/SUB
+= gnd nfets_0/nfet_3/SUB
+= gnd nfets_0/nfet_3/a_0_n26#
+= gnd nfets_0/nfet_2/SUB
+= gnd nfets_0/nfet_2/a_0_n26#
+= gnd nfets_0/nfet_1/SUB
+= gnd nfets_0/nfet_0/SUB
+= gnd nfets_0/nfet_28/SUB
+= gnd nfets_0/nfet_28/a_0_n26#
+= gnd nfets_0/nfet_29/SUB
+= gnd nfets_0/nfet_29/a_0_n26#
+= gnd nfets_0/nfet_20/SUB
+= gnd nfets_0/nfet_20/a_0_n26#
+= gnd nfets_0/nfet_15/SUB
+= gnd nfets_0/nfet_13/SUB
+= gnd nfets_0/nfet_14/SUB
+= gnd nfets_0/nfet_12/SUB
+= gnd nfets_0/nfet_11/SUB
+= gnd nfets_0/nfet_11/a_n60_0#
+= gnd nfets_0/nfet_11/a_0_n26#
+= gnd nfets_0/nfet_10/SUB
+= gnd nfets_0/nfet_10/a_200_0#
+= gnd nfets_0/nfet_10/a_0_n26#
+= gnd nfets_0/nfet_8/SUB
+= gnd nfets_0/nfet_9/SUB
+= gnd nfets_0/nfet_30/SUB
+= gnd nfets_0/nfet_30/a_n60_0#
+= gnd nfets_0/nfet_30/a_0_n26#
+= gnd nfets_0/nfet_31/SUB
+= gnd nfets_0/nfet_31/a_200_0#
+= gnd nfets_0/nfet_31/a_n60_0#
+= gnd nfets_0/nfet_31/a_0_n26#
+= gnd resbank_0/gnd
+= gnd resbank_0/res1p41_12/a_0_1560#
+= gnd resbank_0/res1p41_0/a_0_1560#
+= gnd resbank_0/res1p41_12/SUB
+= gnd resbank_0/res1p41_12/a_0_n432#
+= gnd resbank_0/res1p41_11/SUB
+= gnd resbank_0/res1p41_10/SUB
+= gnd resbank_0/res1p41_9/SUB
+= gnd resbank_0/res1p41_8/SUB
+= gnd resbank_0/res1p41_7/SUB
+= gnd resbank_0/res1p41_6/SUB
+= gnd resbank_0/res1p41_5/SUB
+= gnd resbank_0/res1p41_4/SUB
+= gnd resbank_0/res1p41_3/SUB
+= gnd resbank_0/res1p41_2/SUB
+= gnd resbank_0/res1p41_1/SUB
+= gnd resbank_0/res1p41_0/SUB
+= gnd resbank_0/res1p41_0/a_0_n432#
+= gnd resbank_0/res1p41_24/SUB
+= gnd resbank_0/res1p41_25/SUB
+= gnd resbank_0/res1p41_25/a_0_n432#
+= gnd resbank_0/res1p41_25/a_0_1560#
+= gnd resbank_0/res1p41_23/SUB
+= gnd resbank_0/res1p41_21/SUB
+= gnd resbank_0/res1p41_22/SUB
+= gnd resbank_0/res1p41_20/SUB
+= gnd resbank_0/res1p41_19/SUB
+= gnd resbank_0/res1p41_18/SUB
+= gnd resbank_0/res1p41_17/SUB
+= gnd resbank_0/res1p41_15/SUB
+= gnd resbank_0/res1p41_16/SUB
+= gnd resbank_0/res1p41_14/SUB
+= gnd resbank_0/res1p41_13/SUB
+= gnd resbank_0/res1p41_13/a_0_n432#
+= gnd resbank_0/res1p41_13/a_0_1560#
+= gnd pnp10_0/gnd
+= gnd li_9016_12#
+= gnd pnp10_0/pnpt1_20/Emitter
+= gnd pnp10_0/pnpt1_20/Base
+= gnd pnp10_0/pnpt1_20/Collector
+= gnd pnp10_0/pnpt1_19/Emitter
+= gnd pnp10_0/pnpt1_19/Base
+= gnd pnp10_0/pnpt1_19/Collector
+= gnd pnp10_0/pnpt1_18/Emitter
+= gnd pnp10_0/pnpt1_18/Base
+= gnd pnp10_0/pnpt1_18/Collector
+= gnd pnp10_0/pnpt1_17/Emitter
+= gnd pnp10_0/pnpt1_17/Base
+= gnd pnp10_0/pnpt1_17/Collector
+= gnd pnp10_0/pnpt1_16/Emitter
+= gnd pnp10_0/pnpt1_16/Base
+= gnd pnp10_0/pnpt1_16/Collector
+= gnd pnp10_0/pnpt1_27/Collector
+= gnd pnp10_0/pnpt1_27/Emitter
+= gnd pnp10_0/pnpt1_27/Base
+= gnd pnp10_0/pnpt1_15/Emitter
+= gnd pnp10_0/pnpt1_15/Base
+= gnd pnp10_0/pnpt1_15/Collector
+= gnd pnp10_0/pnpt1_21/Emitter
+= gnd pnp10_0/pnpt1_21/Base
+= gnd pnp10_0/pnpt1_21/Collector
+= gnd pnp10_0/pnpt1_23/Emitter
+= gnd pnp10_0/pnpt1_23/Base
+= gnd pnp10_0/pnpt1_23/Collector
+= gnd pnp10_0/pnpt1_22/Emitter
+= gnd pnp10_0/pnpt1_22/Base
+= gnd pnp10_0/pnpt1_22/Collector
+= gnd pnp10_0/pnpt1_4/Base
+= gnd pnp10_0/pnpt1_4/Collector
+= gnd pnp10_0/pnpt1_14/Emitter
+= gnd pnp10_0/pnpt1_14/Base
+= gnd pnp10_0/pnpt1_14/Collector
+= gnd pnp10_0/pnpt1_9/Base
+= gnd pnp10_0/pnpt1_9/Collector
+= gnd pnp10_0/pnpt1_3/Base
+= gnd pnp10_0/pnpt1_3/Collector
+= gnd pnp10_0/pnpt1_13/Emitter
+= gnd pnp10_0/pnpt1_13/Base
+= gnd pnp10_0/pnpt1_13/Collector
+= gnd pnp10_0/pnpt1_8/Base
+= gnd pnp10_0/pnpt1_8/Collector
+= gnd pnp10_0/pnpt1_2/Base
+= gnd pnp10_0/pnpt1_2/Collector
+= gnd pnp10_0/pnpt1_12/Emitter
+= gnd pnp10_0/pnpt1_12/Base
+= gnd pnp10_0/pnpt1_12/Collector
+= gnd pnp10_0/pnpt1_7/Base
+= gnd pnp10_0/pnpt1_7/Collector
+= gnd pnp10_0/pnpt1_1/Base
+= gnd pnp10_0/pnpt1_1/Collector
+= gnd pnp10_0/pnpt1_26/Collector
+= gnd pnp10_0/pnpt1_26/Emitter
+= gnd pnp10_0/pnpt1_26/Base
+= gnd pnp10_0/pnpt1_0/Base
+= gnd pnp10_0/pnpt1_0/Collector
+= gnd pnp10_0/pnpt1_11/Emitter
+= gnd pnp10_0/pnpt1_11/Base
+= gnd pnp10_0/pnpt1_11/Collector
+= gnd pnp10_0/pnpt1_6/Base
+= gnd pnp10_0/pnpt1_6/Collector
+= gnd pnp10_0/pnpt1_24/Emitter
+= gnd pnp10_0/pnpt1_24/Base
+= gnd pnp10_0/pnpt1_24/Collector
+= gnd pnp10_0/pnpt1_10/Emitter
+= gnd pnp10_0/pnpt1_10/Base
+= gnd pnp10_0/pnpt1_10/Collector
+= gnd pnp10_0/pnpt1_25/Emitter
+= gnd pnp10_0/pnpt1_25/Base
+= gnd pnp10_0/pnpt1_25/Collector
+= gnd pnp10_0/li_n1174_n2454#
+= gnd pnp10_0/pnpt1_5/Base
+= gnd pnp10_0/a_6430_98#
+= gnd pnp10_0/pnpt1_5/Collector
+C qp30 9.1
+R qp3 472
+= qp3 pnp10_0/vq3
+= qp3 pnp10_0/pnpt1_7/Emitter
+= qp3 resbank_0/qp3
+= qp3 resbank_0/res1p41_15/a_0_n432#
+= qp3 resbank_0/res1p41_16/a_0_n432#
+= qp3 resbank_0/res1p41_14/a_0_n432#
+= qp3 resbank_0/li_828_n3160#
+R resbank_0/li_546_0# 127
+= resbank_0/li_546_0# resbank_0/res1p41_2/a_0_n432#
+= resbank_0/li_546_0# resbank_0/res1p41_1/a_0_n432#
+R resbank_0/res1p41_1/a_0_0# 1769
+R resbank_0/res1p41_0/a_0_0# 1769
+R resbank_0/res1p41_19/a_0_0# 1769
+R resbank_0/li_3236_n1168# 127
+= resbank_0/li_3236_n1168# resbank_0/res1p41_20/a_0_1560#
+= resbank_0/li_3236_n1168# resbank_0/res1p41_19/a_0_1560#
+R resbank_0/li_2698_n3160# 127
+= resbank_0/li_2698_n3160# resbank_0/res1p41_19/a_0_n432#
+= resbank_0/li_2698_n3160# resbank_0/res1p41_18/a_0_n432#
+R resbank_0/res1p41_18/a_0_0# 1769
+R resbank_0/res1p41_17/a_0_0# 1769
+C li_1206_8736#0 3.2
+R li_1206_8736# 735
+= li_1206_8736# resbank_0/a_2166_n1148#
+= li_1206_8736# resbank_0/res1p41_8/a_0_n432#
+= li_1206_8736# resbank_0/res1p41_21/a_0_1560#
+= li_1206_8736# resbank_0/res1p41_17/a_0_1560#
+R resbank_0/res1p41_16/a_0_0# 1769
+C resbank_0/li_8_n702#0 2.4
+R resbank_0/li_8_n702# 450
+= resbank_0/li_8_n702# resbank_0/res1p41_18/a_0_1560#
+= resbank_0/li_8_n702# resbank_0/res1p41_16/a_0_1560#
+R resbank_0/res1p41_15/a_0_0# 1769
+R resbank_0/res1p41_14/a_0_0# 1769
+R resbank_0/li_546_n1168# 127
+= resbank_0/li_546_n1168# resbank_0/res1p41_15/a_0_1560#
+= resbank_0/li_546_n1168# resbank_0/res1p41_14/a_0_1560#
+R resbank_0/res1p41_25/a_0_0# 1769
+R resbank_0/res1p41_13/a_0_0# 1769
+R resbank_0/res1p41_24/a_0_0# 1769
+C resbank_0/li_5104_2458#0 3.8
+R resbank_0/li_5104_2458# 376
+= resbank_0/li_5104_2458# resbank_0/res1p41_11/a_0_1560#
+= resbank_0/li_5104_2458# resbank_0/res1p41_24/a_0_1560#
+R resbank_0/li_5670_n3160# 127
+= resbank_0/li_5670_n3160# resbank_0/res1p41_24/a_0_n432#
+= resbank_0/li_5670_n3160# resbank_0/res1p41_23/a_0_n432#
+R resbank_0/res1p41_23/a_0_0# 1769
+R resbank_0/res1p41_12/a_0_0# 1769
+R resbank_0/res1p41_22/a_0_0# 1769
+R resbank_0/li_4850_n1168# 127
+= resbank_0/li_4850_n1168# resbank_0/res1p41_23/a_0_1560#
+= resbank_0/li_4850_n1168# resbank_0/res1p41_22/a_0_1560#
+R resbank_0/res1p41_21/a_0_0# 1769
+R resbank_0/li_5388_0# 127
+= resbank_0/li_5388_0# resbank_0/res1p41_11/a_0_n432#
+= resbank_0/li_5388_0# resbank_0/res1p41_10/a_0_n432#
+R resbank_0/res1p41_10/a_0_0# 1769
+R resbank_0/res1p41_11/a_0_0# 1769
+C resbank_0/li_1084_n3394#0 2.5
+R resbank_0/li_1084_n3394# 486
+= resbank_0/li_1084_n3394# resbank_0/res1p41_22/a_0_n432#
+= resbank_0/li_1084_n3394# resbank_0/res1p41_20/a_0_n432#
+R resbank_0/res1p41_20/a_0_0# 1769
+R resbank_0/res1p41_9/a_0_0# 1769
+R resbank_0/li_4850_1992# 127
+= resbank_0/li_4850_1992# resbank_0/res1p41_10/a_0_1560#
+= resbank_0/li_4850_1992# resbank_0/res1p41_9/a_0_1560#
+C resbank_0/li_2696_n234#0 2.1
+R resbank_0/li_2696_n234# 383
+= resbank_0/li_2696_n234# resbank_0/res1p41_9/a_0_n432#
+= resbank_0/li_2696_n234# resbank_0/res1p41_7/a_0_n432#
+R resbank_0/res1p41_7/a_0_0# 1769
+R resbank_0/res1p41_8/a_0_0# 1769
+R resbank_0/res1p41_6/a_0_0# 1769
+R resbank_0/li_3236_1992# 243
+= resbank_0/li_3236_1992# resbank_0/res1p41_7/a_0_1560#
+= resbank_0/li_3236_1992# resbank_0/res1p41_6/a_0_1560#
+R resbank_0/li_2698_0# 127
+= resbank_0/li_2698_0# resbank_0/res1p41_6/a_0_n432#
+= resbank_0/li_2698_0# resbank_0/res1p41_5/a_0_n432#
+R resbank_0/res1p41_5/a_0_0# 1769
+R resbank_0/res1p41_4/a_0_0# 1769
+C resbank_0/a_4312_1992#0 5.4
+R resbank_0/a_4312_1992# 628
+= resbank_0/a_4312_1992# resbank_0/res1p41_8/a_0_1560#
+= resbank_0/a_4312_1992# resbank_0/res1p41_4/a_0_1560#
+R resbank_0/a_1628_20# 264
+= resbank_0/a_1628_20# resbank_0/res1p41_5/a_0_1560#
+= resbank_0/a_1628_20# resbank_0/res1p41_3/a_0_n432#
+R resbank_0/res1p41_3/a_0_0# 1769
+R resbank_0/res1p41_2/a_0_0# 1769
+R resbank_0/li_1084_1992# 127
+= resbank_0/li_1084_1992# resbank_0/res1p41_3/a_0_1560#
+= resbank_0/li_1084_1992# resbank_0/res1p41_2/a_0_1560#
+C net10 19.5
+R net1 31321
+= net1 pfets_0/net1
+= net1 pfets_0/pfet_16/a_400_0#
+= net1 pfets_0/pfet_15/a_n60_0#
+= net1 pfets_0/pfet_14/a_400_0#
+= net1 pfets_0/pfet_11/a_n60_0#
+= net1 pfets_0/pfet_10/a_400_0#
+= net1 pfets_0/pfet_5/a_n60_0#
+= net1 pfets_0/pfet_4/a_400_0#
+= net1 nfets_0/net1
+= net1 nfets_0/nfet_19/a_0_n26#
+= net1 nfets_0/nfet_19/a_n60_0#
+= net1 nfets_0/nfet_18/a_0_n26#
+= net1 nfets_0/nfet_18/a_200_0#
+= net1 nfets_0/nfet_23/a_0_n26#
+= net1 nfets_0/nfet_22/a_0_n26#
+= net1 nfets_0/nfet_7/a_0_n26#
+= net1 nfets_0/nfet_6/a_0_n26#
+= net1 nfets_0/nfet_5/a_0_n26#
+= net1 nfets_0/nfet_4/a_0_n26#
+= net1 nfets_0/nfet_1/a_0_n26#
+= net1 nfets_0/nfet_1/a_n60_0#
+= net1 nfets_0/nfet_0/a_0_n26#
+= net1 nfets_0/nfet_0/a_200_0#
+= net1 nfets_0/nfet_15/a_n60_0#
+= net1 nfets_0/nfet_15/a_0_n26#
+= net1 nfets_0/nfet_13/a_n60_0#
+= net1 nfets_0/nfet_13/a_0_n26#
+= net1 nfets_0/nfet_14/a_200_0#
+= net1 nfets_0/nfet_14/a_0_n26#
+= net1 nfets_0/nfet_12/a_200_0#
+= net1 nfets_0/nfet_12/a_0_n26#
+= net1 nfets_0/nfet_8/a_0_n26#
+= net1 nfets_0/nfet_9/a_0_n26#
+C qp10 11.9
+R qp1 17248
+= qp1 pnp10_0/vq1
+= qp1 pnp10_0/pnpt1_2/Emitter
+= qp1 nfets_0/qp1
+= qp1 nfets_0/nfet_24/a_n60_0#
+= qp1 nfets_0/nfet_19/a_200_0#
+= qp1 nfets_0/nfet_18/a_n60_0#
+= qp1 nfets_0/nfet_17/a_200_0#
+= qp1 nfets_0/nfet_2/a_n60_0#
+= qp1 nfets_0/nfet_1/a_200_0#
+= qp1 nfets_0/nfet_0/a_n60_0#
+= qp1 nfets_0/nfet_28/a_200_0#
+= qp1 nfets_0/nfet_20/a_n60_0#
+= qp1 nfets_0/nfet_15/a_200_0#
+= qp1 nfets_0/nfet_13/a_200_0#
+= qp1 nfets_0/nfet_14/a_n60_0#
+= qp1 nfets_0/nfet_12/a_n60_0#
+= qp1 nfets_0/nfet_11/a_200_0#
+C rp10 11.9
+R rp1 17343
+= rp1 li_1242_8992#
+= rp1 resbank_0/rp1
+= rp1 resbank_0/res1p41_4/a_0_n432#
+= rp1 nfets_0/rp1
+= rp1 nfets_0/nfet_26/a_n60_0#
+= rp1 nfets_0/nfet_23/a_200_0#
+= rp1 nfets_0/nfet_22/a_n60_0#
+= rp1 nfets_0/nfet_21/a_200_0#
+= rp1 nfets_0/nfet_16/a_n60_0#
+= rp1 nfets_0/nfet_7/a_200_0#
+= rp1 nfets_0/nfet_6/a_n60_0#
+= rp1 nfets_0/nfet_5/a_200_0#
+= rp1 nfets_0/nfet_4/a_n60_0#
+= rp1 nfets_0/nfet_3/a_200_0#
+= rp1 nfets_0/nfet_10/a_n60_0#
+= rp1 nfets_0/nfet_8/a_n60_0#
+= rp1 nfets_0/nfet_9/a_200_0#
+= rp1 nfets_0/nfet_30/a_200_0#
+C starternfet_0/a_88_252#0 4.0
+R starternfet_0/a_88_252# 679
+= starternfet_0/a_88_252# starternfet_0/nfet1_1/a_n60_0#
+= starternfet_0/a_88_252# starternfet_0/nfet1_0/a_1400_0#
+= starternfet_0/a_88_252# starternfet_0/nfet1_0/a_0_n26#
+C vref0 4.4
+R vref 7944
+= vref resbank_0/vref
+= vref resbank_0/res1p41_1/a_0_1560#
+= vref pfets_0/vref
+= vref pfets_0/pfet_13/a_n60_0#
+= vref pfets_0/pfet_12/a_400_0#
+= vref pfets_0/pfet_3/a_n60_0#
+= vref pfets_0/pfet_2/a_400_0#
+R pfets_0/pfet_1/a_n60_0# 3643
+= pfets_0/pfet_1/a_n60_0# pfets_0/pfet_0/a_400_0#
+C net60 8.3
+R net6 5045
+= net6 starternfet_0/net6
+= net6 starternfet_0/nfet1_1/a_1400_0#
+= net6 starternfet_0/nfet1_1/a_0_n26#
+= net6 pfets_0/net6
+= net6 pfets_0/pfet_16/a_0_n26#
+= net6 pfets_0/pfet_15/a_0_n26#
+= net6 pfets_0/pfet_0/a_n60_0#
+C net20 13.9
+R net2 21073
+= net2 nfets_0/net2
+= net2 nfets_0/nfet_7/a_n60_0#
+= net2 nfets_0/nfet_6/a_200_0#
+= net2 nfets_0/nfet_5/a_n60_0#
+= net2 nfets_0/nfet_4/a_200_0#
+= net2 nfets_0/nfet_23/a_n60_0#
+= net2 nfets_0/nfet_22/a_200_0#
+= net2 nfets_0/nfet_8/a_200_0#
+= net2 nfets_0/nfet_9/a_n60_0#
+= net2 pfets_0/net2
+= net2 pfets_0/pfet_13/a_0_n26#
+= net2 pfets_0/pfet_12/a_0_n26#
+= net2 pfets_0/pfet_11/a_0_n26#
+= net2 pfets_0/pfet_10/a_0_n26#
+= net2 pfets_0/pfet_8/a_400_0#
+= net2 pfets_0/pfet_9/a_n60_0#
+= net2 pfets_0/pfet_9/a_0_n26#
+= net2 pfets_0/pfet_8/a_0_n26#
+= net2 pfets_0/pfet_7/a_0_n26#
+= net2 pfets_0/pfet_7/a_n60_0#
+= net2 pfets_0/pfet_6/a_400_0#
+= net2 pfets_0/pfet_6/a_0_n26#
+= net2 pfets_0/pfet_5/a_0_n26#
+= net2 pfets_0/pfet_4/a_0_n26#
+= net2 pfets_0/pfet_3/a_0_n26#
+= net2 pfets_0/pfet_2/a_0_n26#
+= net2 pfets_0/pfet_1/a_0_n26#
+= net2 pfets_0/pfet_0/a_0_n26#
+C vdd0 78.2
+R vdd 47375
+= vdd w_68_18468#
+= vdd pfets_0/vdd
+= vdd pfets_0/pfet_16/a_n60_0#
+= vdd pfets_0/pfet_16/w_n96_n36#
+= vdd pfets_0/pfet_15/a_400_0#
+= vdd pfets_0/pfet_15/w_n96_n36#
+= vdd pfets_0/pfet_14/a_0_n26#
+= vdd pfets_0/pfet_14/a_n60_0#
+= vdd pfets_0/pfet_14/w_n96_n36#
+= vdd pfets_0/pfet_13/a_400_0#
+= vdd pfets_0/pfet_13/w_n96_n36#
+= vdd pfets_0/pfet_12/a_n60_0#
+= vdd pfets_0/pfet_11/a_400_0#
+= vdd pfets_0/pfet_12/w_n96_n36#
+= vdd pfets_0/pfet_11/w_n96_n36#
+= vdd pfets_0/pfet_10/a_n60_0#
+= vdd pfets_0/pfet_10/w_n96_n36#
+= vdd pfets_0/pfet_9/a_400_0#
+= vdd pfets_0/pfet_9/w_n96_n36#
+= vdd pfets_0/pfet_8/a_n60_0#
+= vdd pfets_0/pfet_8/w_n96_n36#
+= vdd pfets_0/pfet_7/a_400_0#
+= vdd pfets_0/pfet_7/w_n96_n36#
+= vdd pfets_0/pfet_6/a_n60_0#
+= vdd pfets_0/pfet_6/w_n96_n36#
+= vdd pfets_0/pfet_5/a_400_0#
+= vdd pfets_0/pfet_5/w_n96_n36#
+= vdd pfets_0/pfet_4/a_n60_0#
+= vdd pfets_0/pfet_4/w_n96_n36#
+= vdd pfets_0/pfet_3/a_400_0#
+= vdd pfets_0/pfet_3/w_n96_n36#
+= vdd pfets_0/pfet_2/a_n60_0#
+= vdd pfets_0/pfet_2/w_n96_n36#
+= vdd pfets_0/pfet_1/a_400_0#
+= vdd pfets_0/pfet_1/w_n96_n36#
+= vdd pfets_0/pfet_0/w_n96_n36#

@@ -1,0 +1,174 @@
+| units: 1e+06 tech: sky130A format: MIT
+x gnd gnd rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=-100 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=-230 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd qp1 gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1070 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd rp1 gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=290 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=420 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1200 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1330 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=550 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1460 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=680 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd qp1 gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1590 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=810 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1720 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=940 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd rp1 gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1590 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1720 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x gnd rp1 gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1070 y=13 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=-100 y=13 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1200 y=13 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=-230 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1330 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=1460 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 qp1 net1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=30 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 net1 qp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=160 y=13 sky130_fd_pr__nfet_01v8_lvt
+x gnd qp1 gnd gnd s=15000,1060 d=15000,1060 l=100 w=500 x=290 y=13 sky130_fd_pr__nfet_01v8_lvt
+x gnd gnd rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=420 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=550 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=680 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=810 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=940 y=13 sky130_fd_pr__nfet_01v8_lvt
+x net1 rp1 net2 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=30 y=-777 sky130_fd_pr__nfet_01v8_lvt
+x net1 net2 rp1 gnd s=15000,1060 d=15000,1060 l=100 w=500 x=160 y=-777 sky130_fd_pr__nfet_01v8_lvt
+C net1 qp1 6.8
+C rp1 net2 4.4
+C net1 rp1 2.6
+C net20 3.6
+R net2 9818
+= net2 nfet_7/a_n30_0#
+= net2 nfet_6/a_100_0#
+= net2 nfet_5/a_n30_0#
+= net2 nfet_4/a_100_0#
+= net2 nfet_23/a_n30_0#
+= net2 nfet_22/a_100_0#
+= net2 nfet_8/a_100_0#
+= net2 nfet_9/a_n30_0#
+C net10 16.9
+R net1 15832
+= net1 nfet_19/a_0_n13#
+= net1 nfet_19/a_n30_0#
+= net1 nfet_18/a_0_n13#
+= net1 nfet_18/a_100_0#
+= net1 nfet_23/a_0_n13#
+= net1 nfet_22/a_0_n13#
+= net1 nfet_7/a_0_n13#
+= net1 nfet_6/a_0_n13#
+= net1 nfet_5/a_0_n13#
+= net1 nfet_4/a_0_n13#
+= net1 nfet_1/a_0_n13#
+= net1 nfet_1/a_n30_0#
+= net1 nfet_0/a_0_n13#
+= net1 nfet_0/a_100_0#
+= net1 nfet_15/a_n30_0#
+= net1 nfet_15/a_0_n13#
+= net1 nfet_13/a_n30_0#
+= net1 nfet_13/a_0_n13#
+= net1 nfet_14/a_100_0#
+= net1 nfet_14/a_0_n13#
+= net1 nfet_12/a_100_0#
+= net1 nfet_12/a_0_n13#
+= net1 nfet_8/a_0_n13#
+= net1 nfet_9/a_0_n13#
+C qp10 5.3
+R qp1 17247
+= qp1 nfet_24/a_n30_0#
+= qp1 nfet_19/a_100_0#
+= qp1 nfet_18/a_n30_0#
+= qp1 nfet_17/a_100_0#
+= qp1 nfet_2/a_n30_0#
+= qp1 nfet_1/a_100_0#
+= qp1 nfet_0/a_n30_0#
+= qp1 nfet_28/a_100_0#
+= qp1 nfet_20/a_n30_0#
+= qp1 nfet_15/a_100_0#
+= qp1 nfet_13/a_100_0#
+= qp1 nfet_14/a_n30_0#
+= qp1 nfet_12/a_n30_0#
+= qp1 nfet_11/a_100_0#
+C gnd0 2.0
+R gnd 50971
+= gnd nfet_25/a_n30_0#
+= gnd nfet_24/a_100_0#
+= gnd nfet_16/a_100_0#
+= gnd nfet_17/a_n30_0#
+= gnd nfet_3/a_n30_0#
+= gnd nfet_2/a_100_0#
+= gnd nfet_28/a_n30_0#
+= gnd nfet_29/a_100_0#
+= gnd nfet_29/a_n30_0#
+= gnd nfet_25/a_100_0#
+= gnd nfet_27/a_100_0#
+= gnd nfet_25/SUB
+= gnd nfet_25/a_0_n13#
+= gnd nfet_24/SUB
+= gnd nfet_24/a_0_n13#
+= gnd nfet_19/SUB
+= gnd nfet_18/SUB
+= gnd nfet_17/SUB
+= gnd nfet_17/a_0_n13#
+= gnd nfet_27/SUB
+= gnd nfet_27/a_n30_0#
+= gnd nfet_27/a_0_n13#
+= gnd nfet_26/SUB
+= gnd nfet_26/a_100_0#
+= gnd nfet_26/a_0_n13#
+= gnd nfet_23/SUB
+= gnd nfet_22/SUB
+= gnd nfet_20/a_100_0#
+= gnd nfet_21/SUB
+= gnd nfet_21/a_n30_0#
+= gnd nfet_21/a_0_n13#
+= gnd nfet_16/SUB
+= gnd nfet_16/a_0_n13#
+= gnd nfet_7/SUB
+= gnd nfet_6/SUB
+= gnd nfet_5/SUB
+= gnd nfet_4/SUB
+= gnd nfet_3/SUB
+= gnd nfet_3/a_0_n13#
+= gnd nfet_2/SUB
+= gnd nfet_2/a_0_n13#
+= gnd nfet_1/SUB
+= gnd nfet_0/SUB
+= gnd nfet_28/SUB
+= gnd nfet_28/a_0_n13#
+= gnd nfet_29/SUB
+= gnd nfet_29/a_0_n13#
+= gnd nfet_20/SUB
+= gnd nfet_20/a_0_n13#
+= gnd nfet_15/SUB
+= gnd nfet_13/SUB
+= gnd nfet_14/SUB
+= gnd nfet_12/SUB
+= gnd nfet_11/SUB
+= gnd nfet_11/a_n30_0#
+= gnd nfet_11/a_0_n13#
+= gnd nfet_10/SUB
+= gnd nfet_10/a_100_0#
+= gnd nfet_10/a_0_n13#
+= gnd nfet_8/SUB
+= gnd nfet_9/SUB
+= gnd nfet_30/SUB
+= gnd nfet_30/a_n30_0#
+= gnd nfet_30/a_0_n13#
+= gnd nfet_31/SUB
+= gnd nfet_31/a_100_0#
+= gnd nfet_31/a_n30_0#
+= gnd nfet_31/a_0_n13#
+C rp10 5.5
+R rp1 17247
+= rp1 nfet_26/a_n30_0#
+= rp1 nfet_23/a_100_0#
+= rp1 nfet_22/a_n30_0#
+= rp1 nfet_21/a_100_0#
+= rp1 nfet_16/a_n30_0#
+= rp1 nfet_7/a_100_0#
+= rp1 nfet_6/a_n30_0#
+= rp1 nfet_5/a_100_0#
+= rp1 nfet_4/a_n30_0#
+= rp1 nfet_3/a_100_0#
+= rp1 nfet_10/a_n30_0#
+= rp1 nfet_8/a_n30_0#
+= rp1 nfet_9/a_100_0#
+= rp1 nfet_30/a_100_0#
