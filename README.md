@@ -350,3 +350,229 @@ Ngspice Reference Manual: Complete reference manual in HTML format.
 ```bash
 sudo apt-get install ngspice
 ```
+**Magic**
+
+Magic is a VLSI layout tool.
+
+**Steps to install Magic** - Open the terminal and type the following to install Magic
+```bash
+$  wget http://opencircuitdesign.com/magic/archive/magic-8.3.32.tgz
+$  tar xvfz magic-8.3.32.tgz
+$  cd magic-8.3.28
+$  ./configure
+$  sudo make
+$  sudo make install
+```
+
+**Netgen**
+Netgen is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic". This is an important step in the integrated circuit design flow, ensuring that the geometry that has been laid out matches the expected circuit.
+**Steps to install Netgen** - Open the terminal and type the following to insatll Netgen.
+```bash
+$  git clone git://opencircuitdesign.com/netgen
+$  cd netgen
+$  ./configure
+$  sudo make
+$  sudo make install 
+```
+
+--------------------------------------------------------------------------------------------------------------------------
+
+## 5.2 PDK Setup ##
+
+A process design kit (PDK) is a set of files used within the semiconductor industry to model a fabrication process for the design tools used to design an integrated circuit. The PDK is created by the foundry defining a certain technology variation for their processes. It is then passed to their customers to use in the design process.
+
+The PDK we are going to use for this BGR is Google Skywater-130 (130 nm) PDK.
+
+```bash
+$  git clone git://opencircuitdesign.com/netgen
+$  cd netgen
+$  ./configure
+$  sudo make
+$  sudo make install 
+``` 
+**Design Flow Overview:**
+
+```bash
+Schematic Design   ──[Ngspice + Sky130 models]──►  Pre-Layout Simulation
+       │
+       ▼
+ Layout Design     ──[Magic + Sky130 tech file]──►  DRC + PEX
+       │
+       ▼
+      LVS          ──[Netgen + Sky130 rule file]──►  Schematic vs Layout
+       │
+       ▼
+Post-Layout Sim    ──[Ngspice + extracted netlist]──►  Final Verification
+``` 
+----------------------------------------------------------------------------------------------------------------------
+
+## 6. Writing a SPICE Netlist ##
+---------------------------------------------------------------------------------------------------------------------
+
+A SPICE netlist is a text file that represents an electronic circuit by listing its components, node connections, and simulation instructions in a format that can be understood by Ngspice. Each .sp file in this project is organized using a consistent structure so that the simulator can correctly interpret and run the circuit simulations.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+## 6.1 Netlist Structure ##
+```bash
+*  Title / Comment line (must be the first line)
+
+*  ----------------------------
+*  1. Include PDK model files
+*  ----------------------------
+.lib "/path/to/sky130.lib.spice" tt
+
+*  ----------------------------
+*  2. Global supply nodes
+*  ----------------------------
+.global gnd vdd
+vdd vdd gnd 1.8
+
+*  ----------------------------
+*  3. Circuit components
+*  ----------------------------
+* Syntax: ComponentName  Node+ Node-  ModelName  Parameters
+
+* BJT (PNP)
+xqp1  vdd  net1  net1  sky130_fd_pr__pnp_05v5_W3p40L3p40  m=1
+
+* MOSFET (PFET)
+xmp1  net1  net2  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=4
+
+* MOSFET (NFET)
+xmn1  net2  net3  gnd  gnd  sky130_fd_pr__nfet_01v8_lvt  l=1 w=5 m=8
+
+* Resistor
+xra1  net3  net4  sky130_fd_pr__res_high_po_1p41  l=7.8 w=1.41 m=1
+
+*  ----------------------------
+*  4. Simulation commands
+*  ----------------------------
+.dc temp -40 125 5        * DC sweep: temperature from -40 to 125°C in steps of 5
+
+.control
+  run
+  plot v(vref)            * Plot the reference voltage node
+.endc
+
+.end                      * Every netlist must end with .end
+```
+
+-----------------------------------------------------------------------------------------------------------------------------
+## 6.2 Key Rules ##
+
+* First line is always a comment
+* Component names are case-insensitive
+* X prefix = subcircuit call
+* Node 0 or gnd = ground
+* .end is mandatory
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 6.3 Sky130 Device Instantiation ##
+
+Sky130 devices are defined as subcircuits in the PDK model files, so they are called using X (subcircuit instance) syntax:
+
+**PNP BJT**
+```bash
+ xInstanceName  Collector  Base  Emitter  ModelName  m=<multiplier>
+xqp1  gnd  net1  net1  sky130_fd_pr__pnp_05v5_W3p40L3p40  m=1
+```
+**PFET**
+```bash
+ xInstanceName  Drain  Gate  Source  Bulk  ModelName  l=<> w=<> m=<>
+xmp1  net1  net2  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=4
+```
+**NFET**
+```bash
+ xInstanceName  Drain  Gate  Source  Bulk  ModelName  l=<> w=<> m=<>
+xmn1  net2  net3  gnd  gnd  sky130_fd_pr__nfet_01v8_lvt  l=1 w=5 m=8
+```
+**RPOLYH Resistor**
+```bash
+ xInstanceName  Node+  Node-  ModelName  l=<> w=<> m=<>
+xra1  net3  net4  sky130_fd_pr__res_high_po_1p41  l=7.8 w=1.41 m=1
+```
+---------------------------------------------------------------------------------------------------------------------------
+
+## 6.4 Simulation Commands ##
+* .dc temp -40 125 1 used to sweep temperature with step of 1
+* .dc vdd 1 3.3 0.1  used to sweep voltage with step of 0.1
+* .control / .endc used to  Interactive block for run and plot commands
+* .lib to include PDK files for specific corner (tt,ff,ss)
+
+-------------------------------------------------------------------------------------------------------------------------
+
+## 6.5 Example Netlists ##
+
+**BGR with SBCM (bgr_lvt_rpolyh_3p40.sp)**
+ ```bash
+* BGR — Self-Biased Current Mirror (TT corner)
+
+.lib "/home/vsduser/Desktop/Work/eda-technology/sky130/libs/sky130.lib.spice" tt
+
+.global gnd vdd
+vdd vdd gnd 1.8
+
+* ---- PMOS Current Mirror ----
+xmp1  net1  net2  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=4
+xmp2  net2  net2  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=4
+xmp3  vref  net2  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=4
+
+* ---- NMOS (SBCM) ----
+xmn1  net1  net1  gnd  gnd  sky130_fd_pr__nfet_01v8_lvt  l=1 w=5 m=8
+xmn2  net2  net1  net3  gnd  sky130_fd_pr__nfet_01v8_lvt  l=1 w=5 m=8
+
+* ---- CTAT Branch (Q1 x1) ----
+xqp1  gnd  net1  net1  sky130_fd_pr__pnp_05v5_W3p40L3p40  m=1
+
+* ---- PTAT Branch (R1 + Q2 x8) ----
+xra1  net3  net4  sky130_fd_pr__res_high_po_1p41  l=7.8 w=1.41 m=2
+xqp2  gnd  net4  net4  sky130_fd_pr__pnp_05v5_W3p40L3p40  m=8
+
+* ---- Reference Branch (R2 + Q3 x1) ----
+xrb1  vref  net5  sky130_fd_pr__res_high_po_1p41  l=7.8 w=1.41 m=16
+xqp3  gnd  net5  net5  sky130_fd_pr__pnp_05v5_W3p40L3p40  m=1
+
+* ---- Start-up Circuit ----
+xmp4  net6  net6  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=1
+xmp5  net7  net6  vdd  vdd  sky130_fd_pr__pfet_01v8_lvt  l=2 w=5 m=1
+xmn3  net7  net7  gnd  gnd  sky130_fd_pr__nfet_01v8_lvt  l=7 w=1 m=1
+xmn4  net6  net7  gnd  gnd  sky130_fd_pr__nfet_01v8_lvt  l=7 w=1 m=1
+
+.dc temp -40 125 5
+
+.control
+  run
+  plot v(vref)
+.endc
+
+.end
+```
+
+**Changing Corner**
+To run FF or SS corners, change only the .lib tag — everything else stays the same:
+
+```bash
+.lib "/path/to/sky130.lib.spice" ff   * Fast-Fast
+.lib "/path/to/sky130.lib.spice" ss   * Slow-Slow
+```
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 7. Pre-Layout Simulation ##
+---------------------------------------------------------------------------------------------------------------------------
+All spice files are simulated using ngspice
+
+## 7.1 CTAT Simulations
+
+**Single BJT CTAT**
+```bash
+ngspice ctat_voltage_gen.sp
+```
+The base-emitter voltage of a single PNP BJT biased at a constant current decreases linearly with temperature at approximately −2 mV/°C — classic CTAT behaviour.
+
+
+<img width="739" height="495" alt="ctat_voltage_gen" src="https://github.com/user-attachments/assets/c0f819f8-be83-4cd4-be37-87bf8946ef6d" />
+<img width="708" height="550" alt="ctat_voltage_gen_" src="https://github.com/user-attachments/assets/7165e093-5bbd-4531-9d47-853c12888ec3" />
+
+
