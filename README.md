@@ -984,10 +984,12 @@ A clean LVS result confirms that:
 
 ## 11. References ##
 ---------------------------------------------------------------------------------------------------------------------------
-* VSDOpen — Bandgap Reference Workshop
-* SkyWater Sky130 PDK Documentation
-* Google SkyWater PDK — Primitive Devices
-* EDA Technology Files (Magic/Netgen for Sky130)
-* Ngspice — Open Source SPICE Simulator
-* Magic VLSI Layout Tool
-* Netgen LVS Tool
+## References
+
+1. [VSDOpen — Bandgap Reference Workshop](https://www.vlsisystemdesign.com/)
+2. [SkyWater SKY130 PDK Documentation](https://skywater-pdk.readthedocs.io/)
+3. [Google SkyWater PDK — Primitive Devices](https://github.com/google/skywater-pdk)
+4. [EDA Technology Files (Magic/Netgen for SKY130)](https://github.com/google/skywater-pdk-libs.tech)
+5. [Ngspice — Open Source SPICE Simulator](https://ngspice.sourceforge.io/)
+6. [Magic VLSI Layout Tool](http://opencircuitdesign.com/magic/)
+7. [Netgen LVS Tool](http://opencircuitdesign.com/netgen/)
