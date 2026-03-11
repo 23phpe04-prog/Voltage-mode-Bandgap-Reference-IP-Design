@@ -89,3 +89,16 @@ Among all the techniques BGR provides constant and PVT independent reference vol
 * Data Converters such as ADC and DAC
 * Biasing Circuits in Analog Systems
 * Battery-Powered Devices
+
+-------------------------------------------------------------------------------------------------------------------------
+
+## 2. Bandgap Reference — Theory
+-------------------------------------------------------------------------------------------------------------------------
+  # 2.1 The Principle of BGR
+
+  BGR is a combination of two voltages with opposite temperature coefficients that produces a temperature independent    reference voltage.
+ * The base–emitter voltage of a Bipolar Junction Transistor (BJT) decreases with increasing temperature. This behavior is called Complementary To Absolute Temperature (CTAT) and typically has a slope of about −2 mV/°C.
+ * The difference between the base–emitter voltages of two BJTs operating at different current densities, denoted as 
+ΔVBE,increases with temperature. This voltage is Proportional To Absolute Temperature (PTAT) with a slope of 0.085mV/°C.
+
+<img width="749" height="455" alt="BGR_Principle" src="https://github.com/user-attachments/assets/f0957b26-933d-4ba1-8275-742ad314c6f2" />
