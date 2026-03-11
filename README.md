@@ -804,3 +804,190 @@ ngspice bgr_lvt_rpolyh_3p40.sp
 
 ----------------------------------------------------------------------------------------------------------------------------
 
+## 8. Layout Design ##
+----------------------------------------------------------------------------------------------------------------------------
+
+All layout is done in Magic with the Sky130A technology file.
+
+```bash
+# Launch Magic with Sky130 tech
+magic -T /home/vsduser/Desktop/Work/eda-technology/sky130/tech/magic/sky130A.tech
+```
+
+The layout is built hierarchically — starting from individual leaf cells, assembled into matched blocks, then placed and routed at the top level. All blocks use common-centroid placement and guard rings for noise isolation and mismatch reduction.
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 8.1 Leaf Cell Layouts ##
+
+Basically there are 4 layouts. One cell is for BJTs , One cell is for Resistors, One cell is for PMOSFETs and One is for NMOSFETs. Finally we combined them and did the LVS and extraction for post-layout simulations.
+
+These are the primitive device layouts that form the building blocks of the complete BGR.
+
+**NFET — W=5µm, L=1µm (nfet.mag)**
+
+```bash
+# magic -T sky130A.tech nfet.mag
+```
+
+LVT NFET used in the SBCM (MN1, MN2). Operated in deep sub-threshold. Guard ring included for latch-up prevention.
+
+<img width="267" height="657" alt="nfet" src="https://github.com/user-attachments/assets/27533d5a-ad7e-4a11-a414-b4f2a73a91fc" />
+
+----------------------------------------------------------------------------------------------------------------------
+
+**NFET — W=1µm, L=7µm (nfet1.mag)**
+
+```bash
+magic -T sky130A.tech nfet1.mag
+```
+<img width="815" height="228" alt="nfet1" src="https://github.com/user-attachments/assets/ef3bc220-8937-4580-b06f-d75abec22419" />
+
+Long-channel LVT NFET used in the start-up circuit (MN3, MN4). Long L ensures very low leakage in the off-state, preventing the start-up path from disturbing the bias after the circuit has settled.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+**PFET — W=5µm, L=2µm (pfet.mag)**
+
+```bash
+magic -T sky130A.tech pfet.mag
+```
+
+LVT PFET used for the current mirror (MP1–MP3). Long channel (L = 2 µm) reduces channel-length modulation, improving current mirror accuracy across VDD variation.
+<img width="351" height="619" alt="pfet" src="https://github.com/user-attachments/assets/92cce923-a09d-44a8-9966-da32a5d1e691" />
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**PNP BJT Unit Cell (pnpt1.mag)**
+```bash
+magic -T sky130A.tech pnpt1.mag
+```
+
+
+Single PNP BJT with emitter area 3.40 × 3.40 µm (11.56 µm²). This is the unit cell replicated to build all three BJT instances: Q1 (1×), Q2 (8×), and Q3 (1×).
+<img width="752" height="446" alt="pnp10" src="https://github.com/user-attachments/assets/eccfa553-b8f6-48da-b91b-df46e038c8f5" />
+
+-----------------------------------------------------------------------------------------------------------------------------
+**Resistor Unit Cell (res1p41.mag)**
+```bash
+magic -T sky130A.tech res1p41.mag
+```
+Single RPOLYH unit with W = 1.41 µm, L = 7.8 µm giving approximately 2 kΩ per unit. Multiple units are connected in series and parallel to achieve R1 = 5 kΩ and R2 = 33 kΩ.
+
+<img width="134" height="635" alt="res1p41" src="https://github.com/user-attachments/assets/88b28aa2-cb77-4fa7-86bd-c99b6ba31e7c" />
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 8.2 Block-Level Layouts ##
+
+Leaf cells are grouped into functionally matched blocks. All blocks use common-centroid interdigitation and guard rings.
+
+```bash
+magic -T sky130A.tech nfets.mag
+```
+MN1 and MN2 placed together in a common-centroid arrangement with a shared guard ring. Both carry equal currents — tight physical matching minimises systematic current offset between branches.
+
+<img width="701" height="623" alt="nets" src="https://github.com/user-attachments/assets/4d70529d-80cd-4e06-8dd0-643da5ad6826" />
+
+----------------------------------------------------------------------------------------------------------------------------
+
+**PFET Bank (pfets.mag)**
+
+```bash
+magic -T sky130A.tech pfets.mag
+```
+MP1–MP5 placed together with matched interdigitation and a p-well guard ring. Current mirror accuracy — which directly sets branch currents and hence V_REF — depends critically on PFET matching.
+
+<img width="754" height="234" alt="pfets" src="https://github.com/user-attachments/assets/7b6868ed-dfa4-4a8d-92c7-5075b9dabf1f" />
+
+---------------------------------------------------------------------------------------------------------------------------
+
+**Resistor Bank (resbank.mag)**
+
+```bash
+magic -T sky130A.tech resbank.mag
+```
+
+All R1 and R2 unit resistors are placed with dummy resistors at the ends of each row to ensure uniform etching environments. A guard ring surrounds the entire block. Series and parallel connections implement R1 = 5 kΩ and R2 = 33 kΩ with the ratio R2/R1 matching as the critical design parameter.
+
+<img width="648" height="619" alt="resbank" src="https://github.com/user-attachments/assets/1a456b17-0d63-43c7-babc-d47f257ac67d" />
+
+--------------------------------------------------------------------------------------------------------------------------
+
+**BJT Array (pnp10.mag)**
+
+```bash
+magic -T sky130A.tech pnp10.mag
+```
+10-BJT common-centroid array containing Q2×8, Q1×1, and Q3×1. Dummy BJTs surround all active devices to ensure uniform implant density. Common-centroid placement minimises gradient-induced mismatch between Q1 and Q2 — the primary source of PTAT inaccuracy.
+
+<img width="752" height="446" alt="pnp10" src="https://github.com/user-attachments/assets/15a7ccf7-62f8-4952-8d10-580a28e6bb70" />
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**Starter NFET (starternfet.mag)**
+
+```bash
+magic -T sky130A.tech starternfet.mag
+```
+
+Two W=1µm, L=7µm NFETs (MN3 and MN4) placed together with a shared guard ring. These form the sensing and pull-up devices in the start-up circuit.
+
+<img width="771" height="249" alt="starternfet" src="https://github.com/user-attachments/assets/5919d6df-ffc8-40c3-8b37-d6c4a6ea47c0" />
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+## 8.3 Top-Level Layout ##
+
+```bash
+magic -T sky130A.tech top.mag
+```
+<img width="349" height="608" alt="top" src="https://github.com/user-attachments/assets/687b5ed2-a008-42e2-a70c-a05bcece1023" />
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+**Parasitic Extraction sequence (Magic Tcl console):**
+
+```bash
+extract all
+ext2sim label on
+ext2sim
+ext2spice scale off
+ext2spice hierarchy off
+ext2spice
+```
+This produces top.spice — the extracted netlist including all parasitic capacitances — which is then fed into Ngspice for post-layout simulation and into Netgen for LVS.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+## 9. LVS Verification ##
+
+-----------------------------------------------------------------------------------------------------------------------------After extraction, the layout netlist is compared against the schematic netlist using Netgen.
+
+```bash
+netgen
+```
+
+Inside netgen console window enter below command for LVS verification.
+
+```bash
+lvs "top.spice top" "bgr_lvt_rpolyh_3p40.sp top" /home/vsduser/Desktop/Work/eda-technology/sky130/tech/netgen//sky130A_setup.tcl
+```
+---------------------------------------------------------------------------------------------------------------------------
+A clean LVS result confirms that:
+
+* All devices match in type, size, and connectivity.
+* No shorts or opens were introduced during layout.
+---------------------------------------------------------------------------------------------------------------------------
+
+## 11. References ##
+---------------------------------------------------------------------------------------------------------------------------
+* VSDOpen — Bandgap Reference Workshop
+* SkyWater Sky130 PDK Documentation
+* Google SkyWater PDK — Primitive Devices
+* EDA Technology Files (Magic/Netgen for Sky130)
+* Ngspice — Open Source SPICE Simulator
+* Magic VLSI Layout Tool
+* Netgen LVS Tool
