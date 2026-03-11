@@ -101,4 +101,93 @@ Among all the techniques BGR provides constant and PVT independent reference vol
  * The difference between the base–emitter voltages of two BJTs operating at different current densities, denoted as 
 ΔVBE,increases with temperature. This voltage is Proportional To Absolute Temperature (PTAT) with a slope of 0.085mV/°C.
 
-<img width="749" height="455" alt="BGR_Principle" src="https://github.com/user-attachments/assets/f0957b26-933d-4ba1-8275-742ad314c6f2" />
+<img width="749" height="455" alt="BGR_Principle" src="https://github.com/user-attachments/assets/f0957b26-933d-4ba1-8275-742ad314c6f2" />Scaling the PTAT slope up by a constant K ≈ 26 and adding it to the CTAT gives a flat output:
+
+$$
+V_{REF} = V_{BE} + k \cdot \Delta V_{BE}
+$$
+
+The two opposing slopes cancel, yielding a residual tempco of 10–50 ppm/°C — ideal for a precision reference.
+
+The output voltage of a Bandgap Reference is approximately 1.2 V because it is derived from the bandgap energy of silicon. The bandgap energy of silicon is about 1.205 eV at 0 K, which corresponds to a voltage of roughly 1.2 V when expressed in electrical terms.
+
+----------------------------------------------------------------------------------------------------------------------------
+## 2.2 Generation of CTAT Voltage ##
+<img width="668" height="249" alt="CTAT" src="https://github.com/user-attachments/assets/b46d69d3-3646-4851-9f21-f81fbaee7017" />
+
+The diode connected PNP transistor is forward biased by a constant current source Io, then voltage across VBE is given by
+
+$$
+V_BE = V_T \ln\left(\frac{I_0}{I_S}\right)
+$$
+
+Where  VT  is given by
+
+$$
+V_T = \frac{kT}{q}
+$$
+
+The saturation current is given by
+
+$$
+I_S = A T^{(4+m)} e^{-\frac{E_g}{kT}}
+$$
+
+$$
+\mu \propto \mu_0 T^m
+$$
+
+m is a constant
+
+$$
+m = -\frac{3}{2}
+$$
+
+When differentiating with respect to temprature
+
+$$
+\frac{dV}{dT} =
+\frac{V_D - (4+m)V_T - \frac{E_g}{q}}{T}
+$$
+
+Where T=300K, VBE is 0.7V
+
+$$
+\frac{dV}{dT} =
+\frac{0.7 - (4 - 1.5)(0.026) - 1.2}{300}
+$$
+
+$$
+\frac{dV}{dT} \approx -1.88 \; mV/^\circ C
+$$
+
+This negative slope represents the CTAT (Complementary To Absolute Temperature) behavior used in a Bandgap Reference.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 2.3 Generation of PTAT Voltage
+
+<img width="804" height="405" alt="PTAT" src="https://github.com/user-attachments/assets/bbcfc00d-ba32-486f-8caf-3c3179dafb1e" />
+
+
+<img width="641" height="366" alt="Screenshot 2026-03-11 120506" src="https://github.com/user-attachments/assets/73d3755f-e004-477e-a140-4e2180c4cc8d" />
+
+---------------------------------------------------------------------------------------------------------------------------
+
+## 2.4 Types of BGR
+
+Architecture wise BGR can be designed in 2 ways
+* Using Self-biased Current Mirror
+* Using Operational-amplifier
+
+
+Application wise BGR can be categorized as
+* Low-Voltage BGR
+* Low-Power BGR
+* High-PSRR and low-noise BGR
+* Curvature Compensated BGR
+
+In this project we developed a Self-biased current mirror BGR with Tempco of less than 30ppm/°C
+  
+
+
