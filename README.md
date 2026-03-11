@@ -188,6 +188,20 @@ Application wise BGR can be categorized as
 * Curvature Compensated BGR
 
 In this project we developed a Self-biased current mirror BGR with Tempco of less than 30ppm/°C
-  
 
+-----------------------------------------------------------------------------------------------------------------------------
+
+## 3. Self-Biased Current Mirror Based BGR
+
+BGR mainly contains of 5 sub circuits
+* CTAT Voltage generation circuit
+* PTAT Voltage generation circuit
+* Self-biased current mirror circuit
+* Reference branch circuit
+* Start-up circuit
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## 3.1 Self-Biased Current Mirror
+<img width="1026" height="514" alt="Screenshot 2026-03-11 121908" src="https://github.com/user-attachments/assets/08048e32-f166-42f9-9148-0659da7b1fbf" />
 
