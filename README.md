@@ -205,3 +205,148 @@ BGR mainly contains of 5 sub circuits
 ## 3.1 Self-Biased Current Mirror
 <img width="1026" height="514" alt="Screenshot 2026-03-11 121908" src="https://github.com/user-attachments/assets/08048e32-f166-42f9-9148-0659da7b1fbf" />
 
+---------------------------------------------------------------------------------------------------------------------------
+
+## 3.2 Reference Branch Circuit
+A third PMOS MP3 mirrors the same current I₃ ≈ I₁ ≈ I₂ into a reference branch consisting of R2 in series with a PNP BJT Q3.
+The voltage across Q3 is CTAT, and the voltage across R2 (= R2 × I₃) is PTAT since I₃ is PTAT-proportional. Their sum is:
+
+
+$$
+V_{REF} = V_{Q3} + V_{R2}=V_{BE} + I.R2
+$$
+
+<img width="559" height="546" alt="Screenshot 2026-03-11 122919" src="https://github.com/user-attachments/assets/b2f749de-c889-4126-a969-952a576fde6c" />
+
+-----------------------------------------------------------------------------------------------------------------------------
+## 3.3 Start-up Circuit ##
+
+The SBCM has two stable operating points:
+
+* I_in = I_out = 0 A (degenerate / undesired)
+* The desired bias current
+  
+At power-on, the circuit is at the zero-current point. The start-up circuit must:
+
+* Detect the zero-current state and force the circuit out of it.
+* Disengage once the correct operating point is reached — otherwise it will corrupt the bias.
+  
+Operation:
+
+* Initially, all branch currents = 0 → net2 follows VDD.
+* When net2 voltage exceeds net6 by one V_T, current flows through MP5 → net1 rises → MN1/MN2 turn on → circuit reaches the desired operating point.
+* Once stable, the start-up circuit is self-defeating: net2 drops to the correct bias level, MP5 turns off, and the start-up path is isolated.
+
+<img width="761" height="509" alt="Screenshot 2026-03-11 123303" src="https://github.com/user-attachments/assets/1a1da466-5542-41a2-9edd-26d44a2be01e" />
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## 3.4 Complete BGR Circuit ##
+
+<img width="751" height="490" alt="BGR" src="https://github.com/user-attachments/assets/c2327adb-5932-4528-bda0-92d885773a98" />
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## 4. Design Specification and Device Datasheet
+-----------------------------------------------------------------------------------------------------------------------------
+## 4.1 Design Specifications
+
+* VDD = 1.8V
+* Power Consumption = < 60uW
+* Operating Temperature = −40 °C to +125 °C
+* Start-up circuit Current = < 2 µA
+* Start-up Time = 2us
+* TEMPCO of V_Ref = < 50 ppm/°C
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## 4.2 Device Datasheet
+  **PNP BJT**
+  ### Device Parameters
+
+| Parameter | NFET | PFET |
+|-----------|------|------|
+| Type | LVT | LVT |
+| Voltage | 1.8 V | 1.8 V |
+| Threshold Voltage | ~0.4 V | ~−0.6 V |
+| Sky130 Model | sky130_fd_pr__nfet_01v8_lvt | sky130_fd_pr__pfet_01v8_lvt |
+
+**MOSFET (LVT, 1.8V)**
+
+| Parameter | NFET | PFET |
+|-----------|------|------|
+| Type | LVT | LVT |
+| Voltage | 1.8 V | 1.8 V |
+| Threshold Voltage | ~0.4 V | ~−0.6 V |
+| Sky130 Model | sky130_fd_pr__nfet_01v8_lvt | sky130_fd_pr__pfet_01v8_lvt |
+
+
+**Resistor (RPOLYH)**
+
+| Parameter | Value |
+|-----------|-------|
+| Sheet Resistance | ~350 Ω/□ |
+| Tempco | 2.5 Ω/°C |
+| Available Bin Widths | 0.35 µm, 0.69 µm, 1.41 µm, 2.85 µm, 5.73 µm |
+| Sky130 Model | sky130_fd_pr__res_high_po |
+
+------------------------------------------------------------------------------------------------------------------------
+
+## 4.3 Circuit Design ##
+
+**1. Current Calculation**
+
+Max power = 60 µW at VDD = 1.8 V → max total current = 33.33 µA.
+With 3 branches: 10 µA/branch (3 × 10 = 30 µA, leaving headroom for start-up).
+
+**2. BJT ratio N**
+A moderate N = 8 BJTs in parallel in branch 2 gives
+
+* Good layout matching (common-centroid array)
+* Moderate R1 value (not too large, keeping area reasonable)
+
+ **3. R1 calculation**
+
+ <img width="1001" height="279" alt="Screenshot 2026-03-11 125013" src="https://github.com/user-attachments/assets/d4a8c912-c37a-4442-ac6f-589293d7fec6" />
+
+ Implemented as: W = 1.41 µm, L = 7.8 µm, unit = 2 kΩ → 2 series + 2 parallel (2+2+(2‖2))
+
+ **4. R2 calculation**
+ <img width="1020" height="421" alt="Screenshot 2026-03-11 125117" src="https://github.com/user-attachments/assets/d5302bd0-74c0-4040-8040-a26541315d87" />
+
+ Implemented as: 16 in series + 2 in parallel (2+2+...+2+(2‖2))
+
+ **5 — PMOS sizing (SBCM)**
+
+MP1, MP2: Both in saturation. Long channel (L = 2 µm) to reduce channel length modulation.
+Final size: L = 2 µm, W = 5 µm, M = 4
+
+**6 — NMOS sizing (SBCM)**
+
+MN1, MN2: Operated in deep sub-threshold to achieve low current with compact area.
+Final size: L = 1 µm, W = 5 µm, M = 8
+
+ <img width="822" height="518" alt="finalbgr" src="https://github.com/user-attachments/assets/23c3b914-1407-4138-bfc3-df4c6ce1a70d" />
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## 5. Tools and PDK Setup ##
+-----------------------------------------------------------------------------------------------------------------------------
+  **5.1 Tool Setup**
+
+  For the design and simulation of the BGR circuit we will need the following tools.
+  * Spice netlist simulation - Ngspice
+  * Layout Design and DRC - Magic
+  * LVS - Netgen
+**Ngspice**
+
+Ngspice is the open source spice simulator for electric and electronic circuits. Ngspice is an open project, there is no closed group of developers.
+
+Ngspice Reference Manual: Complete reference manual in HTML format.
+
+**Steps to install Ngspice** - Open the terminal and type the following to install Ngspice
+
+```bash
+sudo apt-get install ngspice
+```
