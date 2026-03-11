@@ -18,8 +18,8 @@ A Bandgap Reference (BGR) is an essential analog circuit used to generate a stab
 1. [Importance of BGR?](#1-why-a-bandgap-reference)
 2. [Bandgap Reference — Theory](#2-bandgap-reference--theory)
     * [2.1 The Principle of BGR ](#21-the-bgr-principle)
-    * [2.2 CTAT Voltage Generation](#22-ctat-voltage-generation)
-    * [2.3 PTAT Voltage Generation](#23-ptat-voltage-generation)
+    * [2.2 Generation of CTAT Voltage](#22-ctat-voltage-generation)
+    * [2.3 Generation of PTAT Voltage](#23-ptat-voltage-generation)
     * [2.4 Types of BGR](#24-bgr-types)
 3. [Self-Biased Current Mirror Based BGR](#3-self-biased-current-mirror-based-bgr)
     * [3.1 Self-Biased Current Mirror](#31-self-biased-current-mirror)
@@ -52,3 +52,40 @@ A Bandgap Reference (BGR) is an essential analog circuit used to generate a stab
 9. [LVS Verification](#9-lvs-verification)
 10. [Results Summary](#10-results-summary)
 11. [References](#11-references)
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+## 1.Importance of BGR ##
+
+In integrated circuits, many analog and mixed-signal blocks require a precise and stable reference voltage to operate correctly. However, voltages inside a chip usually vary with temperature, supply voltage, and process variations, which can affect circuit performance. A Bandgap Reference is used to overcome these variations and provide a stable reference voltage.
+
+<img width="560" height="218" alt="BGR1" src="https://github.com/user-attachments/assets/3365215e-8e83-4ba0-9287-b28f019eb694" />
+
+### Various Voltage Reference Techniques
+
+| Feature | Resistive Divider | Zener Reference |
+|--------|-------------------|-----------------|
+| Temp. Stability | Poor (moves with R) | Moderate | 
+| Supply Sensitivity | High (scales with VDD) | Moderate | 
+| Operating Voltage | Any | High (>5 V) | 
+| Power Efficiency | Constant drain | High current needed | 
+
+Among all the techniques BGR provides constant and PVT independent reference voltage which is used for low power applications.
+## Key Features of Bandgap Reference (BGR) #
+
+### Features of Bandgap Reference (BGR)
+
+| Feature | Description |
+|--------|-------------|
+| Temperature Independence | Produces a nearly constant reference voltage by combining CTAT (V_BE) and PTAT (ΔV_BE) voltages generated using Bipolar Junction Transistor (BJT) devices. |
+| Stable Output Voltage | Produces a reference voltage close to the silicon bandgap (~1.2 V) which remains stable across temperature variations |
+| Low Supply Sensitivity | Output voltage is minimally affected by changes in the supply voltage |
+| High Accuracy | Uses ratio matching of devices and resistors, reducing the impact of process variations |
+
+## Applications Of BGR ##
+
+* Power Management Circuits such as LDO
+* Data Converters such as ADC and DAC
+* Biasing Circuits in Analog Systems
+* Battery-Powered Devices
