@@ -575,4 +575,232 @@ The base-emitter voltage of a single PNP BJT biased at a constant current decrea
 <img width="739" height="495" alt="ctat_voltage_gen" src="https://github.com/user-attachments/assets/c0f819f8-be83-4cd4-be37-87bf8946ef6d" />
 <img width="708" height="550" alt="ctat_voltage_gen_" src="https://github.com/user-attachments/assets/7165e093-5bbd-4531-9d47-853c12888ec3" />
 
+---------------------------------------------------------------------------------------------------------------------------
+
+**Multiple BJT CTAT**
+```bash
+ngspice ctat_voltage_gen_mul_bjt.sp
+```
+With 8 BJTs in parallel in branch 2 vs 1 BJT in branch 1, the CTAT slope of the branch 1 node becomes steeper (more negative), as expected from the BJT area ratio.
+
+<img width="611" height="549" alt="ctat_voltage_gen_mul_bjts_2" src="https://github.com/user-attachments/assets/dacb6f24-701e-4a1d-a0dc-eff7b68f3bb7" />
+<img width="736" height="483" alt="ctat_voltage_gen_mul_bjts" src="https://github.com/user-attachments/assets/9ea504c7-6b26-45b6-a9c2-cc7995718dd6" />
+
+--------------------------------------------------------------------------------------------------------------------------
+**CTAT with Varying Current**
+
+```bash
+ngspice ctat_voltage_gen_var_current.sp
+```
+<img width="706" height="547" alt="ctat_vol_gen_var_currents_1" src="https://github.com/user-attachments/assets/dd6de928-1b05-4a68-a9cc-fe7355b51688" />
+<img width="740" height="493" alt="ctat_vol_gen_var_currents" src="https://github.com/user-attachments/assets/b8242cca-349e-4bc3-80ee-48eba47d78cf" />
+
+Reducing bias current lowers V_BE and increases the magnitude of the negative slope — 
+confirming the I₀ dependence in the CTAT equation.
+
+--------------------------------------------------------------------------------------------------------------------------
+## 7.2 PTAT Simulations ##
+-----------------------------------------------------------------------------------------------------------------------------
+**PTAT with Ideal Voltage Source (VCVS)**
+```bash
+ngspice ptat_voltage_gen.sp
+```
+<img width="740" height="489" alt="ptat_vol_gen_ckt" src="https://github.com/user-attachments/assets/41a942ae-4369-4035-974f-dbd398829ece" /><img width="707" height="559" alt="ptat_vol_gen_ckt_3" src="https://github.com/user-attachments/assets/acd6d427-c070-42a1-89a1-1172c6ccca6e" />
+<img width="1434" height="550" alt="ptat_vol_gen_ckt_2" src="https://github.com/user-attachments/assets/a4b777a4-c423-4f40-b84c-534c7fdfc5ec" />
+
+
+Using a VCVS to force equal voltages at the branch nodes, the voltage across R1 is proportional to V_T ln(N) — confirming the PTAT slope of +0.085 mV/°C per unit of ln(N).
+
+--------------------------------------------------------------------------------------------------------------------------
+
+## PTAT with Ideal Current Source ##
+
+```bash
+ngspice ptat_voltage_gen_ideal_current_source.sp
+```
+<img width="1434" height="550" alt="ptat_vol_gen_ckt_2" src="https://github.com/user-attachments/assets/1e7e92cf-d873-40ec-8f98-1d30061ec9a2" />
+
+--------------------------------------------------------------------------------------------------------------------------
+## 7.3 Resistor Tempco ##
+
+```bash
+ngspice res_tempco.sp
+```
+<img width="1229" height="514" alt="Screenshot 2026-03-11 134247" src="https://github.com/user-attachments/assets/ff66e6cd-5b94-4974-a92b-4728d57a3741" />
+<img width="736" height="476" alt="Res_tempco_var_cur" src="https://github.com/user-attachments/assets/969e86df-8dbb-445d-8fd4-e0039c11d10b" />
+
+-----------------------------------------------------------------------------------------------------------------------
+
+## Resistor Tempco with Varying Current ##
+
+```bash
+ngspice res_tempco_var_current.sp
+```
+<img width="1403" height="548" alt="Res_tempco_var_current_1" src="https://github.com/user-attachments/assets/6e4db788-0c62-436b-ac06-a693629b77a4" />
+<img width="739" height="488" alt="Res_tempco_var_current" src="https://github.com/user-attachments/assets/3e4bc89f-0458-4027-bcae-9af88b4bf118" />
+
+-----------------------------------------------------------------------------------------------------------------------------
+## 7.4 FET Tempco ##
+
+
+```bash
+ngspice fet_tempco.sp
+```
+<img width="1445" height="548" alt="FET_tempco" src="https://github.com/user-attachments/assets/457ba527-cfce-4781-9046-c14c8bbfd587" />
+
+-------------------------------------------------------------------------------------------------------------------------
+
+## 7.5 Full BGR Simulations ##
+
+**BGR with Ideal Op-Amp**
+
+```bash
+ngspice bgr_using_ideal_opamp.sp
+```
+
+Before committing to the self-biased current mirror, the full BGR loop is verified using a VCVS as an ideal op-amp. The output should be an umbrella-shaped curve centred near 1.2 V — confirming that the CTAT + PTAT cancellation is working correctly.
+
+<img width="1854" height="984" alt="bgr_using_ideal_opamp_var_supply1" src="https://github.com/user-attachments/assets/cb338c5d-a870-49bc-90f5-baa82355a692" />
+<img width="1420" height="556" alt="bgr_using_ideal_opamp_var_supply" src="https://github.com/user-attachments/assets/ec3e2a48-87d6-4d0a-b2f2-6b194161b826" />
+<img width="1412" height="553" alt="bgr_using_ideal_opamp_2" src="https://github.com/user-attachments/assets/fc1695ad-2865-4127-8619-30c34f624afb" />
+<img width="745" height="499" alt="bgr_using_ideal_opamp" src="https://github.com/user-attachments/assets/8d4b576c-fcbe-4b36-96da-bbc426e0382f" />
+
+From graph
+
+Vmax=1.23583V       Vmin=1.23175V  Vnominal=1.23568V  Tmax=125   Tmin=-40
+
+Hence Tempco of BGR using ideal opamp is 20 ppm/c
+
+-----------------------------------------------------------------------------------------------------------------------------
+## BGR with SBCM — Typical (TT corner) ##
+
+```bash
+ngspice bgr_lvt_rpolyh_3p40.sp
+```
+
+The self-biased current mirror replaces the ideal op-amp. Expected result:
+* V_REF ≈ 1.2 V, flat across −40 °C to +125 °C
+* Tempco ≈ 21.7 ppm/°C
+
+<img width="1413" height="550" alt="bgr_lvt_rpolyh_3p40_1" src="https://github.com/user-attachments/assets/a85f8d63-4f2a-4e27-9036-0b169ab29767" />
+<img width="1450" height="550" alt="bgr_lvt_rpolyh_3p40" src="https://github.com/user-attachments/assets/b0e6694a-cfa1-47b2-8e3c-bba2dd80a34f" />
+
+Vmax=1.10999,   Vmin=1.10569,  Vnom=1.10994, Tmax=125, Tmin=-40
+
+Tempco=23 ppm/c
+
+**Transient simulations**
+<img width="1855" height="982" alt="bgr_lvt_rpolyh_3p40 _trans" src="https://github.com/user-attachments/assets/a3af5eb9-8f7b-4970-afb0-4541607b038e" />
+
+We are giving the pulse of 0 to 2V with delay of 10ns, rise time of 1us, fall time of 1us, period of 1ms, and  pulse width of 100us.
+
+Transient analysis is done with a step size of 5n, and till 10u 
+
+Vdd is varying from 0 to 2V with in 1uS
+Blue line Vref and is constant at 1.1V. Initially Vref is following Vdd and after some time it is stable around @1.1us.
+Green one is net2 voltage. Initially it is followed by Vdd and after some time net2 voltage is down.
+Other voltages also stable around at 1.1us.
+
+So we can say that start up time is 1.1us
+
+From this graph we can easily found how startup circuit is work.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+## BGR — Fast-Fast (FF) Corner ##
+
+```bash
+ngspice bgr_lvt_rpolyh_3p40_ff.sp
+```
+Tempco ≈ 10 ppm/°C (best case — process corners tend to improve tempco here)<img width="1406" height="550" alt="bgr_lvt_rpolyh_3p40_ff_2" src="https://github.com/user-attachments/assets/71d0e379-2051-459d-8cad-10868544e979" />
+<img width="1401" height="551" alt="bgr_lvt_rpolyh_3p40_ff_1" src="https://github.com/user-attachments/assets/98ae0398-3ef8-431e-ad59-3718926a0448" />
+
+
+Vmax=1.12227, Vmin=1.12038, Vnom=1.12205, Tmax-Tmin=165
+TC=10ppm/c
+
+This is the best corner because it is internally compensated due to that  resistance tempco and current tempco combined.
+
+
+
+<img width="1451" height="574" alt="bgr_lvt_rpolyh_3p40_ff" src="https://github.com/user-attachments/assets/9914b59e-0ba2-435b-8d4a-1bdf48b73358" />
+
+**Transient simulations**
+<img width="1448" height="564" alt="bgr_lvt_rpolyh_3p40_ff_trans" src="https://github.com/user-attachments/assets/e94b6d75-ebd7-48dd-9913-bab08eff3567" />
+
+--------------------------------------------------------------------------------------------------------------------------
+
+## BGR — Slow-Slow (SS) Corner ##
+
+```bash
+ngspice bgr_lvt_rpolyh_3p40_ss.sp
+```
+
+Tempco ≈ 45 ppm/°C (worst case — still within the 50 ppm/°C specification)
+
+
+<img width="1410" height="542" alt="bgr_lvt_rpolyh_3p40_ss_1" src="https://github.com/user-attachments/assets/c8fac7e2-dc09-4cf6-9d4d-84370440caa5" />
+<img width="1448" height="542" alt="bgr_lvt_rpolyh_3p40_ss" src="https://github.com/user-attachments/assets/1715a817-0ea7-4c73-9184-3e785418063f" />
+
+
+Vmax=1.0979V, Vmin=1.08936V, Vnom=1.09742
+TC=47ppm/c
+
+**Transient simulations**
+<img width="1602" height="555" alt="bgr_lvt_rpolyh_3p40_ss_trans" src="https://github.com/user-attachments/assets/d4eb3d9d-88fd-4c94-9166-04b431de83ab" />
+
+-------------------------------------------------------------------------------------------------------------------------
+
+## BGR — Supply Variation ##
+
+```bash
+ngspice bgr_lvt_rpolyh_3p40_var_supply.sp
+```
+VDD swept from 1.62 V to 1.98 V (±10%). V_REF should remain stable, validating the PSRR of the SBCM topology.
+
+
+<img width="703" height="550" alt="bgr_lvt_rpolyh_3p40_var_supply_2" src="https://github.com/user-attachments/assets/526afe15-5910-4c6b-9149-837ed361f8be" />
+<img width="1411" height="550" alt="bgr_lvt_rpolyh_3p40_var_supply_1" src="https://github.com/user-attachments/assets/270b8053-9255-418b-b0fc-d4cb9cea707d" />
+<img width="742" height="490" alt="bgr_lvt_rpolyh_3p40_var_supply" src="https://github.com/user-attachments/assets/a0506bd1-29bc-4014-96fe-cd286c5484ef" />
+
+If we compare the results of Vref vs Variable power supply (VDD) with SBCM BGR and Ideal opamp based BGR then the sensitivity of Vref in opamp is more than the sensitivity of SBCM BGR.
+
+**Transient simulations**
+<img width="1438" height="562" alt="bgr_lvt_rpolyh_3p40_var_supply_trans" src="https://github.com/user-attachments/assets/c6fd3af2-b44b-45aa-8acf-a50c320d9644" />
+
+<img width="1417" height="554" alt="bgr_lvt_rpolyh_3p40_var_supply_trans_4" src="https://github.com/user-attachments/assets/cb129d9c-d803-466e-b599-a694103f142d" />
+<img width="1438" height="562" alt="bgr_lvt_rpolyh_3p40_var_supply_trans_2" src="https://github.com/user-attachments/assets/88e95569-9190-481a-80aa-870398c9876c" />
+<img width="1421" height="562" alt="bgr_lvt_rpolyh_3p40_var_supply_trans_1" src="https://github.com/user-attachments/assets/0059f96d-c036-41ee-9c8c-719d1bbb9d54" />
+
+It took around 1uS to start the simulation. It meets our specifications where start-up-time < 2uS.
+Net2[PMOS] should be down and net1 [NMOS} should be up to start the current in BGR after start-up.
+So blue line is net2 which is down and yellow one is net1 which is up after startup.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## Isolated start-up BGR ##
+
+```bash
+ngspice bgr_lvt_rpolyh_3p40.sp
+```
+
+
+During transient simulations if start up circuit is not  there then BGR is always at Zero-operating condition<img width="1849" height="984" alt="bgr_lvt_rpolyh_3p40_var_supply_isolated_startup_2" src="https://github.com/user-attachments/assets/6c5ec4f4-7241-4126-b3b6-4fb42d9f4425" />
+<img width="1849" height="984" alt="bgr_lvt_rpolyh_3p40_isolated_startup_vref" src="https://github.com/user-attachments/assets/f98a892a-60b9-4eb0-bec8-2250cbe2a2ff" />
+<img width="1849" height="984" alt="bgr_lvt_rpolyh_3p40_isolated_startup_current" src="https://github.com/user-attachments/assets/5154a265-1e1d-4fc9-ae67-cb5c3a677a63" />
+<img width="1447" height="550" alt="bgr_lvt_rpolyh_3p40_isolated_startup" src="https://github.com/user-attachments/assets/7df199fe-dec7-4290-a192-5cecf283a44f" />
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Cuurent through Start-Up circuit ##
+
+```bash
+ngspice bgr_lvt_rpolyh_3p40.sp
+```
+
+<img width="1439" height="564" alt="start-up_current_mp5" src="https://github.com/user-attachments/assets/5d09bf6b-72a8-4ce3-943d-65e1883d0cd7" />
+<img width="1849" height="984" alt="bgr_lvt_rpolyh_3p40_startupckt_cur" src="https://github.com/user-attachments/assets/fad608fd-57f9-4941-9ebe-f828267b6ef7" />
+
+
+----------------------------------------------------------------------------------------------------------------------------
 
